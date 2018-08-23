@@ -10,7 +10,7 @@ var chain3 = new Chain3();
 
 
 var Transaction = require('../../moac-tx/index.js');
-var utils = require('../lib/moacutils.js');//moaclib.txutils;
+var utils = require('../lib/moacutils.js');
 
 //library used to compare two results.
 var assert = require('assert');
@@ -46,9 +46,6 @@ function sendTx(src, des, chainid, value){
       data: '0x00',
       shardingFlag: 0
     }
-
-
-    // console.log(rawTx);
 
     //Create the new Transaction object
 
@@ -101,8 +98,8 @@ chain3.setProvider(new chain3.providers.HttpProvider('http://localhost:8545'));
 //   console.log("Acct[",i,"]:",taccts[i].addr, chain3.mc.getTransactionCount(taccts[i].addr), checkBal(taccts[i].addr));
 
 //Call the function, note the input value is in 'mc'
-var src = taccts[1];
-var des = taccts[2];
+var src = taccts[0];
+var des = taccts[1];
 
 console.log("\nBefore transfer:", checkBal(src.addr), checkBal(des.addr));
 var networkid = chain3.version.network;
